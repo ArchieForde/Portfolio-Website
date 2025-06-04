@@ -35,10 +35,10 @@
 
       <div id="mobile-menu" class="menu hidden">
         <nav class="menu-nav">
-          <a href="#home" class="text-4xl md:text-6xl mb-8 glow-text" data-aos="fade-left" data-aos-delay="100">Home</a>
-          <a href="#about" class="text-4xl md:text-6xl mb-8 glow-text" data-aos="fade-right" data-aos-delay="100">About</a>
-          <a href="#projects" class="text-4xl md:text-6xl mb-8 glow-text" data-aos="fade-left" data-aos-delay="100">Projects</a>
-          <a href="#contact" class="text-4xl md:text-6xl glow-text" data-aos="fade-right" data-aos-delay="100">Contact</a>
+          <a href="#home" class="home-menu" data-aos="fade-left" data-aos-delay="100">Home</a>
+          <a href="#about" class="about-menu" data-aos="fade-right" data-aos-delay="100">About</a>
+          <a href="#projects" class="projects-menu" data-aos="fade-left" data-aos-delay="100">Projects</a>
+          <a href="#contact" class="contact-menu" data-aos="fade-right" data-aos-delay="100">Contact</a>
         </nav>
       </div>
 
@@ -54,10 +54,23 @@
         <button class="contact-button" data-aos="fade-right" data-aos-delay="100">
           <a href="#contact">Contact Me</a>
         </button>
+        <button class="projects-button" data-aos="fade-right" data-aos-delay="100">
+          <a href="#projects">Projects</a>
+        </button>
       </div>
   </section>
 
-  <!-- Placeholder for More Sections -->
+  <!-- About Section -->
+<section id="about" class="about-section">
+  <h2>About Me</h2>
+  <p>
+    Welcome to my portfolio! I am a passionate developer with a love for creating
+    innovative and user-friendly web applications. With experience in modern web
+    technologies, I strive to deliver high-quality projects that make an impact.
+  </p>
+</section>
+
+  <!-- Projects -->
   <section id="projects" class="min-h-screen px-6 py-12">
     <h2 class="text-3xl font-bold mb-6">Projects</h2>
     <div class="grid md:grid-cols-2 gap-6">
@@ -80,6 +93,14 @@
       <button type="submit" class="bg-neon-cyan text-black px-6 py-2 rounded hover:scale-105 transition">Send Message</button>
     </form>
   </section>
+
+  <footer class="footer">
+    <p>
+      © 2025 Archie Forde. All rights reserved. | 
+      <a href="#home">Back to Top</a>
+    </p>
+  </footer>
+  
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({
@@ -90,5 +111,7 @@
     </script>
   <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
   <script src="script.js"></script>
+
+
 </body>
 </html>

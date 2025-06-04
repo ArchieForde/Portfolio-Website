@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Orbitron', sans-serif;
   background: #212121;
   ;
 }
 
-.glow-text {
-  text-shadow: 0 0 8px #00ffe7, 0 0 16px #1bd8c5;
-}
+/* ------------------------- Opening Page CSS -------------------------- */
 
 /* Hamburger Menu Styles */
 .hamburger {
@@ -63,7 +65,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  transition: opacity 0.3s ease, pointer-events 0.3s ease;
+  transition: opacity 0.6s ease, pointer-events 0.6s ease;
   z-index: 998;
 }
 .menu.hidden {
@@ -72,103 +74,160 @@ body {
 }
 
 /* Nav Styles */
-.menu-nav {
+.home-menu, .about-menu, .projects-menu, .contact-menu {
+  align-items: center;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center align the links horizontally */
-  gap: 2rem; /* Increase spacing between links */
-  transform: translateY(-50px); /* Start slightly above */
-  opacity: 0; /* Initially hidden */
-  transition: transform 0.6s ease, opacity 0.5s ease; /* Smooth slide-in effect */
-}
-
-.menu-nav a {
-  color: white;
-  font-size: rem; /* Make links bigger */
-  font-weight: bold; /* Add weight for emphasis */
-  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.5;
   text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
-}
-
-.menu-nav a:hover {
-  color: #37f5ff; /* Change color on hover */
-  transform: scale(1.1); /* Slight zoom effect */
-}
-
-/* Show animation when menu is visible */
-.menu:not(.hidden) .menu-nav {
-  transform: translateY(0); /* Slide into position */
-  opacity: 1; /* Fully visible */
-}
-
-a {
-  position: relative;
-  display: inline-block;
-  padding: 15px 30px;
-  border: 2px solid #fefefe;
   text-transform: uppercase;
-  color: #fefefe;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 20px;
-}
-
-a span {
+  outline: 0;
+  border: 0;
+  padding: 1rem;
   position: relative;
-  z-index: 3;
-  color: #fefefe;
+  transition: transform 0.3s ease;
 }
 
-a:hover span,
-a:focus span {
-  color: #37f5ff;
+.home-menu:hover, .about-menu:hover, .projects-menu:hover, .contact-menu:hover {
+  transform: translateX(10px);
 }
 
-a::before {
-  content: '';
+.home-menu::after, .about-menu::after, .projects-menu::after, .contact-menu::after {
+  content: "";
   position: absolute;
-  top: 6px;
-  left: -2px;
-  width: calc(100% + 4px);
-  height: calc(100% - 12px);
-  background-color: #212121;
-  color: #fefefe;
-  transition: 0.3s ease-in-out;
-  transform: scaleY(1);
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s ease;
 }
 
-a:hover::before {
-  transform: scaleY(0);
+.home-menu:hover::after, .about-menu:hover::after, .projects-menu:hover::after, .contact-menu:hover::after {
+  width: 100%;
 }
 
-a::after {
-  content: '';
-  position: absolute;
-  left: 6px;
-  top: -2px;
-  height: calc(100% + 4px);
-  width: calc(100% - 12px);
-  background-color: #212121;
-  transition: 0.3s ease-in-out;
-  transform: scaleX(1);
-  transition-delay: 0.5s;
-  color: #fefefe;
+.menu:not(.hidden) .menu-nav {
+  transform: translateY(0); 
+  opacity: 1; 
 }
 
-a:hover::after {
-  transform: scaleX(0);
-}
+/* Contact Button Styles */
 
-a span {
-  position: relative;
-  z-index: 3;
+.button-wrapper {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  margin: 2rem auto; 
+  width: 30%; 
 }
 
 .contact-button {
-  background-color: none;
+  color: white;
   text-decoration: none;
-  background-color: #212121;
+  font-size: 25px;
   border: none;
-  color: #fefefe;
+  background: none;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact-button::before {
+  margin-left: auto;
+}
+
+.contact-button::after, .contact-button::before {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #00ffe7;
+  display: block;
+  transition: 0.5s;
+}
+
+.contact-button:hover::after, .contact-button:hover::before {
+  width: 100%;
+}
+
+/* Project Button Styles */
+
+.projects-button {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  border: none;
+  background: none;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+
+.projects-button::before {
+  margin-left: auto;
+}
+
+.projects-button::after, .projects-button::before {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #00ffe7;
+  display: block;
+  transition: 0.5s;
+}
+
+.projects-button:hover::after, .projects-button:hover::before {
+  width: 100%;
+}
+
+/* ----------------------- ABOUT SECTION CSS ---------------------------- */
+.about-section {
+  background-color: #2a2a2a;
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-section h2 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-section p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ----------------------- PROJECT SECTION CSS -------------------------- */
+
+/* ----------------------- CONTACT SECTION CSS -------------------------- */
+
+/* ----------------------- FOOTER SECTION CSS --------------------------- */
+.footer {
+  background-color: #1a1a1a;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.footer a {
+  color: #00ffe7;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
